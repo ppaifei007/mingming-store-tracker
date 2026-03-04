@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸣鸣很忙门店数据追踪平台</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>鸣鸣很忙门店数据追踪平台</h1>
+            <p class="update-time">数据更新时间: <span id="updateTime">-</span></p>
+        </header>
+        
+        <section class="summary-cards">
+            <div class="card">
+                <h3>2024年总营收</h3>
+                <p class="value" id="revenue2024">-</p>
+                <span class="unit">亿元</span>
+            </div>
+            <div class="card">
+                <h3>2025年总营收</h3>
+                <p class="value" id="revenue2025">-</p>
+                <span class="unit">亿元</span>
+            </div>
+            <div class="card">
+                <h3>同比增长</h3>
+                <p class="value" id="yoyGrowth">-</p>
+                <span class="unit">%</span>
+            </div>
+        </section>
+        
+        <section class="tabs">
+            <button class="tab-btn active" data-tab="baidu">百度地图数据</button>
+            <button class="tab-btn" data-tab="gaode">高德地图数据</button>
+        </section>
+        
+        <section class="tab-content" id="baidu-tab">
+            <h2>百度地图数据 <span class="total-stores" id="baiduTotal">-</span></h2>
+            <table id="baiduTable" class="display">
+                <thead>
+                    <tr>
+                        <th>省份</th>
+                        <th>鸣鸣很忙</th>
+                        <th>零食很忙</th>
+                        <th>赵一鸣零食</th>
+                        <th>合计</th>
+                        <th>2024营收(万)</th>
+                        <th>2025营收(万)</th>
+                        <th>增长率</th>
+                    </tr>
+                </thead>
+                <tbody id="baiduBody"></tbody>
+            </table>
+        </section>
+        
+        <section class="tab-content hidden" id="gaode-tab">
+            <h2>高德地图数据 <span class="total-stores" id="gaodeTotal">-</span></h2>
+            <table id="gaodeTable" class="display">
+                <thead>
+                    <tr>
+                        <th>省份</th>
+                        <th>鸣鸣很忙</th>
+                        <th>零食很忙</th>
+                        <th>赵一鸣零食</th>
+                        <th>合计</th>
+                        <th>2024营收(万)</th>
+                        <th>2025营收(万)</th>
+                        <th>增长率</th>
+                    </tr>
+                </thead>
+                <tbody id="gaodeBody"></tbody>
+            </table>
+        </section>
+        
+        <footer>
+            <p>数据说明:</p>
+            <ul>
+                <li>门店数据来源: 百度地图API、高德地图API</li>
+                <li>财报数据来源: 新浪财经</li>
+                <li>零食很忙和赵一鸣零食门店已剔除与鸣鸣很忙物理地址重复的门店</li>
+                <li>分省营收为基于门店数量权重的估算值</li>
+            </ul>
+        </footer>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

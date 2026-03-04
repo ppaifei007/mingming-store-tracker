@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.update-time {
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.card .value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card .unit {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    padding: 0 30px;
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-btn:hover {
+    color: #333;
+}
+
+.tab-btn.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+    font-weight: bold;
+}
+
+.tab-content {
+    padding: 30px;
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+.tab-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.total-stores {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: normal;
+}
+
+table.dataTable {
+    width: 100% !important;
+}
+
+table.dataTable thead th {
+    background: #667eea;
+    color: white;
+    padding: 12px 15px;
+}
+
+table.dataTable tbody td {
+    padding: 10px 15px;
+}
+
+table.dataTable tbody tr:hover {
+    background: #f5f5f5;
+}
+
+.growth-positive {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.growth-negative {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+footer {
+    background: #f8f9fa;
+    padding: 30px;
+    border-top: 1px solid #eee;
+}
+
+footer p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+footer ul {
+    margin-left: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .summary-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        border-bottom: none;
+        border-left: 3px solid transparent;
+    }
+    
+    .tab-btn.active {
+        border-bottom: none;
+        border-left-color: #667eea;
+    }
+}

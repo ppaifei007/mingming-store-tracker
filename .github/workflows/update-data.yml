@@ -1,0 +1,72 @@
+name: Update Store Data
+
+on:
+  # 每月1日 UTC 00:00 (北京时间 08:00) 自动运行
+  schedule:
+    - cron: '0 0 1 * *'
+  
+  # 支持手动触发
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests httpx
+      
+      - name: Fetch Baidu Map Data
+        env:
+          BAIDU_MAP_API_KEY: ${{ secrets.BAIDU_MAP_API_KEY }}
+        run: |
+          cd scripts
+          python fetch_baidu.py
+      
+      - name: Fetch Gaode Map Data
+        env:
+          GAODE_MAP_URL: ${{ secrets.GAODE_MAP_URL }}
+          GAODE_MAP_API_KEY: ${{ secrets.GAODE_MAP_API_KEY }}
+        run: |
+          cd scripts
+          python fetch_gaode.py
+      
+      - name: Fetch Financial Data
+        env:
+          SINA_FINANCE_URL: ${{ secrets.SINA_FINANCE_URL }}
+        run: |
+          cd scripts
+          python fetch_financial.py
+      
+      - name: Deduplicate Data
+        run: |
+          cd scripts
+          python dedup.py
+      
+      - name: Merge Data
+        run: |
+          cd scripts
+          python merge_data.py
+      
+      - name: Generate Website
+        run: |
+          cd scripts
+          python generate_site.py
+      
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/ docs/data/
+          git diff --staged --quiet || git commit -m "chore: update store data $(date +'%Y-%m-%d')"
+          git push

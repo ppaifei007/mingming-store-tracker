@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "generated_at": "2026-03-04T10:00:00",
+    "sources": ["baidu_map", "gaode_map", "sina_finance"],
+    "financial_years": ["2024", "2025"],
+    "note": "示例数据，请运行数据采集脚本获取真实数据"
+  },
+  "financial_summary": {
+    "2024": {
+      "total_revenue_billion": 390,
+      "total_stores": 13000,
+      "yoy_growth": 0.45
+    },
+    "2025": {
+      "total_revenue_billion": 500,
+      "total_stores": 15000,
+      "yoy_growth": 0.28
+    }
+  },
+  "baidu_data": {
+    "total_stores": 13500,
+    "provinces": [
+      {"province": "湖南省", "mingming": 2800, "lingshi": 450, "zhaoyiming": 320, "total": 3570, "revenue_2024": 107179.49, "revenue_2025": 137410.26, "growth_rate": 28.21},
+      {"province": "广东省", "mingming": 1500, "lingshi": 280, "zhaoyiming": 180, "total": 1960, "revenue_2024": 58830.77, "revenue_2025": 75423.08, "growth_rate": 28.21},
+      {"province": "江西省", "mingming": 1200, "lingshi": 200, "zhaoyiming": 150, "total": 1550, "revenue_2024": 46538.46, "revenue_2025": 59666.67, "growth_rate": 28.21},
+      {"province": "浙江省", "mingming": 800, "lingshi": 150, "zhaoyiming": 100, "total": 1050, "revenue_2024": 31538.46, "revenue_2025": 40435.90, "growth_rate": 28.21},
+      {"province": "江苏省", "mingming": 750, "lingshi": 130, "zhaoyiming": 90, "total": 970, "revenue_2024": 29138.46, "revenue_2025": 37358.97, "growth_rate": 28.21},
+      {"province": "湖北省", "mingming": 700, "lingshi": 120, "zhaoyiming": 80, "total": 900, "revenue_2024": 27030.77, "revenue_2025": 34653.85, "growth_rate": 28.21},
+      {"province": "四川省", "mingming": 600, "lingshi": 100, "zhaoyiming": 70, "total": 770, "revenue_2024": 23123.08, "revenue_2025": 29641.03, "growth_rate": 28.21},
+      {"province": "福建省", "mingming": 500, "lingshi": 80, "zhaoyiming": 60, "total": 640, "revenue_2024": 19215.38, "revenue_2025": 24628.21, "growth_rate": 28.21},
+      {"province": "河南省", "mingming": 450, "lingshi": 70, "zhaoyiming": 50, "total": 570, "revenue_2024": 17115.38, "revenue_2025": 21935.90, "growth_rate": 28.21},
+      {"province": "安徽省", "mingming": 400, "lingshi": 60, "zhaoyiming": 40, "total": 500, "revenue_2024": 15015.38, "revenue_2025": 19243.59, "growth_rate": 28.21},
+      {"province": "山东省", "mingming": 350, "lingshi": 50, "zhaoyiming": 35, "total": 435, "revenue_2024": 13063.08, "revenue_2025": 16743.59, "growth_rate": 28.21},
+      {"province": "贵州省", "mingming": 300, "lingshi": 45, "zhaoyiming": 30, "total": 375, "revenue_2024": 11261.54, "revenue_2025": 14435.90, "growth_rate": 28.21},
+      {"province": "河北省", "mingming": 200, "lingshi": 30, "zhaoyiming": 20, "total": 250, "revenue_2024": 7507.69, "revenue_2025": 9623.08, "growth_rate": 28.21},
+      {"province": "北京市", "mingming": 150, "lingshi": 25, "zhaoyiming": 15, "total": 190, "revenue_2024": 5705.85, "revenue_2025": 7315.38, "growth_rate": 28.21},
+      {"province": "上海市", "mingming": 130, "lingshi": 20, "zhaoyiming": 12, "total": 162, "revenue_2024": 4865.54, "revenue_2025": 6235.90, "growth_rate": 28.21},
+      {"province": "重庆市", "mingming": 120, "lingshi": 18, "zhaoyiming": 10, "total": 148, "revenue_2024": 4444.92, "revenue_2025": 5696.41, "growth_rate": 28.21},
+      {"province": "天津市", "mingming": 80, "lingshi": 12, "zhaoyiming": 8, "total": 100, "revenue_2024": 3003.08, "revenue_2025": 3848.72, "growth_rate": 28.21},
+      {"province": "广西壮族自治区", "mingming": 250, "lingshi": 40, "zhaoyiming": 25, "total": 315, "revenue_2024": 9459.69, "revenue_2025": 12125.64, "growth_rate": 28.21},
+      {"province": "云南省", "mingming": 180, "lingshi": 28, "zhaoyiming": 18, "total": 226, "revenue_2024": 6786.92, "revenue_2025": 8699.49, "growth_rate": 28.21},
+      {"province": "陕西省", "mingming": 150, "lingshi": 22, "zhaoyiming": 14, "total": 186, "revenue_2024": 5585.72, "revenue_2025": 7159.49, "growth_rate": 28.21},
+      {"province": "山西省", "mingming": 100, "lingshi": 15, "zhaoyiming": 10, "total": 125, "revenue_2024": 3753.85, "revenue_2025": 4810.90, "growth_rate": 28.21},
+      {"province": "辽宁省", "mingming": 80, "lingshi": 12, "zhaoyiming": 8, "total": 100, "revenue_2024": 3003.08, "revenue_2025": 3848.72, "growth_rate": 28.21},
+      {"province": "吉林省", "mingming": 50, "lingshi": 8, "zhaoyiming": 5, "total": 63, "revenue_2024": 1891.94, "revenue_2025": 2424.62, "growth_rate": 28.21},
+      {"province": "黑龙江省", "mingming": 40, "lingshi": 6, "zhaoyiming": 4, "total": 50, "revenue_2024": 1501.54, "revenue_2025": 1924.36, "growth_rate": 28.21},
+      {"province": "海南省", "mingming": 60, "lingshi": 10, "zhaoyiming": 6, "total": 76, "revenue_2024": 2282.34, "revenue_2025": 2925.03, "growth_rate": 28.21},
+      {"province": "甘肃省", "mingming": 30, "lingshi": 5, "zhaoyiming": 3, "total": 38, "revenue_2024": 1141.17, "revenue_2025": 1462.56, "growth_rate": 28.21},
+      {"province": "青海省", "mingming": 10, "lingshi": 2, "zhaoyiming": 1, "total": 13, "revenue_2024": 390.40, "revenue_2025": 500.26, "growth_rate": 28.21},
+      {"province": "内蒙古自治区", "mingming": 25, "lingshi": 4, "zhaoyiming": 2, "total": 31, "revenue_2024": 930.95, "revenue_2025": 1193.21, "growth_rate": 28.21},
+      {"province": "宁夏回族自治区", "mingming": 15, "lingshi": 2, "zhaoyiming": 1, "total": 18, "revenue_2024": 540.55, "revenue_2025": 692.77, "growth_rate": 28.21},
+      {"province": "新疆维吾尔自治区", "mingming": 20, "lingshi": 3, "zhaoyiming": 2, "total": 25, "revenue_2024": 750.77, "revenue_2025": 962.18, "growth_rate": 28.21},
+      {"province": "西藏自治区", "mingming": 5, "lingshi": 1, "zhaoyiming": 0, "total": 6, "revenue_2024": 180.18, "revenue_2025": 230.92, "growth_rate": 28.21},
+      {"province": "台湾省", "mingming": 0, "lingshi": 0, "zhaoyiming": 0, "total": 0, "revenue_2024": 0, "revenue_2025": 0, "growth_rate": 0},
+      {"province": "香港特别行政区", "mingming": 0, "lingshi": 0, "zhaoyiming": 0, "total": 0, "revenue_2024": 0, "revenue_2025": 0, "growth_rate": 0},
+      {"province": "澳门特别行政区", "mingming": 0, "lingshi": 0, "zhaoyiming": 0, "total": 0, "revenue_2024": 0, "revenue_2025": 0, "growth_rate": 0}
+    ]
+  },
+  "gaode_data": {
+    "total_stores": 13200,
+    "provinces": [
+      {"province": "湖南省", "mingming": 2750, "lingshi": 420, "zhaoyiming": 300, "total": 3470, "revenue_2024": 102474.24, "revenue_2025": 131354.17, "growth_rate": 28.18},
+      {"province": "广东省", "mingming": 1480, "lingshi": 260, "zhaoyiming": 170, "total": 1910, "revenue_2024": 56401.52, "revenue_2025": 72300.00, "growth_rate": 28.18},
+      {"province": "江西省", "mingming": 1180, "lingshi": 190, "zhaoyiming": 140, "total": 1510, "revenue_2024": 44590.91, "revenue_2025": 57159.09, "growth_rate": 28.18},
+      {"province": "浙江省", "mingming": 780, "lingshi": 140, "zhaoyiming": 95, "total": 1015, "revenue_2024": 29971.21, "revenue_2025": 38420.45, "growth_rate": 28.18},
+      {"province": "江苏省", "mingming": 730, "lingshi": 125, "zhaoyiming": 85, "total": 940, "revenue_2024": 27757.58, "revenue_2025": 35583.33, "growth_rate": 28.18},
+      {"province": "湖北省", "mingming": 680, "lingshi": 115, "zhaoyiming": 75, "total": 870, "revenue_2024": 25691.67, "revenue_2025": 32936.36, "growth_rate": 28.18},
+      {"province": "四川省", "mingming": 580, "lingshi": 95, "zhaoyiming": 65, "total": 740, "revenue_2024": 21852.27, "revenue_2025": 28015.15, "growth_rate": 28.18},
+      {"province": "福建省", "mingming": 480, "lingshi": 75, "zhaoyiming": 55, "total": 610, "revenue_2024": 18012.88, "revenue_2025": 23094.70, "growth_rate": 28.18},
+      {"province": "河南省", "mingming": 430, "lingshi": 65, "zhaoyiming": 45, "total": 540, "revenue_2024": 15947.73, "revenue_2025": 20443.18, "growth_rate": 28.18},
+      {"province": "安徽省", "mingming": 380, "lingshi": 55, "zhaoyiming": 38, "total": 473, "revenue_2024": 13967.35, "revenue_2025": 17905.68, "growth_rate": 28.18},
+      {"province": "山东省", "mingming": 330, "lingshi": 48, "zhaoyiming": 32, "total": 410, "revenue_2024": 12107.58, "revenue_2025": 15522.73, "growth_rate": 28.18},
+      {"province": "贵州省", "mingming": 285, "lingshi": 42, "zhaoyiming": 28, "total": 355, "revenue_2024": 10483.71, "revenue_2025": 13440.53, "growth_rate": 28.18},
+      {"province": "河北省", "mingming": 190, "lingshi": 28, "zhaoyiming": 18, "total": 236, "revenue_2024": 6969.70, "revenue_2025": 8934.85, "growth_rate": 28.18},
+      {"province": "北京市", "mingming": 145, "lingshi": 22, "zhaoyiming": 14, "total": 181, "revenue_2024": 5345.00, "revenue_2025": 6853.03, "growth_rate": 28.18},
+      {"province": "上海市", "mingming": 125, "lingshi": 18, "zhaoyiming": 11, "total": 154, "revenue_2024": 4547.73, "revenue_2025": 5830.30, "growth_rate": 28.18},
+      {"province": "重庆市", "mingming": 115, "lingshi": 16, "zhaoyiming": 9, "total": 140, "revenue_2024": 4134.09, "revenue_2025": 5300.00, "growth_rate": 28.18},
+      {"province": "天津市", "mingming": 75, "lingshi": 11, "zhaoyiming": 7, "total": 93, "revenue_2024": 2746.36, "revenue_2025": 3521.21, "growth_rate": 28.18},
+      {"province": "广西壮族自治区", "mingming": 240, "lingshi": 38, "zhaoyiming": 23, "total": 301, "revenue_2024": 8889.92, "revenue_2025": 11395.08, "growth_rate": 28.18},
+      {"province": "云南省", "mingming": 170, "lingshi": 26, "zhaoyiming": 16, "total": 212, "revenue_2024": 6261.36, "revenue_2025": 8027.27, "growth_rate": 28.18},
+      {"province": "陕西省", "mingming": 145, "lingshi": 20, "zhaoyiming": 13, "total": 178, "revenue_2024": 5256.44, "revenue_2025": 6739.39, "growth_rate": 28.18},
+      {"province": "山西省", "mingming": 95, "lingshi": 14, "zhaoyiming": 9, "total": 118, "revenue_2024": 3484.85, "revenue_2025": 4467.42, "growth_rate": 28.18},
+      {"province": "辽宁省", "mingming": 75, "lingshi": 11, "zhaoyiming": 7, "total": 93, "revenue_2024": 2746.36, "revenue_2025": 3521.21, "growth_rate": 28.18},
+      {"province": "吉林省", "mingming": 48, "lingshi": 7, "zhaoyiming": 4, "total": 59, "revenue_2024": 1742.27, "revenue_2025": 2233.33, "growth_rate": 28.18},
+      {"province": "黑龙江省", "mingming": 38, "lingshi": 5, "zhaoyiming": 3, "total": 46, "revenue_2024": 1358.64, "revenue_2025": 1741.67, "growth_rate": 28.18},
+      {"province": "海南省", "mingming": 55, "lingshi": 9, "zhaoyiming": 5, "total": 69, "revenue_2024": 2037.88, "revenue_2025": 2612.50, "growth_rate": 28.18},
+      {"province": "甘肃省", "mingming": 28, "lingshi": 4, "zhaoyiming": 2, "total": 34, "revenue_2024": 1004.09, "revenue_2025": 1287.12, "growth_rate": 28.18},
+      {"province": "青海省", "mingming": 8, "lingshi": 1, "zhaoyiming": 1, "total": 10, "revenue_2024": 295.30, "revenue_2025": 378.54, "growth_rate": 28.18},
+      {"province": "内蒙古自治区", "mingming": 22, "lingshi": 3, "zhaoyiming": 2, "total": 27, "revenue_2024": 797.31, "revenue_2025": 1022.05, "growth_rate": 28.18},
+      {"province": "宁夏回族自治区", "mingming": 13, "lingshi": 2, "zhaoyiming": 1, "total": 16, "revenue_2024": 472.48, "revenue_2025": 605.61, "growth_rate": 28.18},
+      {"province": "新疆维吾尔自治区", "mingming": 18, "lingshi": 3, "zhaoyiming": 1, "total": 22, "revenue_2024": 649.66, "revenue_2025": 832.80, "growth_rate": 28.18},
+      {"province": "西藏自治区", "mingming": 4, "lingshi": 1, "zhaoyiming": 0, "total": 5, "revenue_2024": 147.65, "revenue_2025": 189.27, "growth_rate": 28.18},
+      {"province": "台湾省", "mingming": 0, "lingshi": 0, "zhaoyiming": 0, "total": 0, "revenue_2024": 0, "revenue_2025": 0, "growth_rate": 0},
+      {"province": "香港特别行政区", "mingming": 0, "lingshi": 0, "zhaoyiming": 0, "total": 0, "revenue_2024": 0, "revenue_2025": 0, "growth_rate": 0},
+      {"province": "澳门特别行政区", "mingming": 0, "lingshi": 0, "zhaoyiming": 0, "total": 0, "revenue_2024": 0, "revenue_2025": 0, "growth_rate": 0}
+    ]
+  }
+}
