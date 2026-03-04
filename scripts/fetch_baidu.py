@@ -86,6 +86,7 @@ def fetch_brand_stores_in_province(brand: str, province: str) -> list:
             # 过滤：名称必须包含品牌关键词
             name = poi.get("name", "")
             if brand in name or any(b in name for b in ["鸣鸣", "零食很忙", "赵一鸣"]):
+                location = poi.get("location") or {}
                 store = {
                     "uid": poi.get("uid", ""),
                     "name": name,
@@ -93,8 +94,8 @@ def fetch_brand_stores_in_province(brand: str, province: str) -> list:
                     "province": province,
                     "city": poi.get("city", ""),
                     "area": poi.get("area", ""),
-                    "lat": poi.get("location", {}).get("lat", 0),
-                    "lng": poi.get("location", {}).get("lng", 0),
+                    "lat": location.get("lat", 0) if isinstance(location, dict) else 0,
+                    "lng": location.get("lng", 0) if isinstance(location, dict) else 0,
                     "tel": poi.get("telephone", ""),
                     "brand": brand
                 }

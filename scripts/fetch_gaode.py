@@ -93,7 +93,7 @@ def search_poi_gaode(keywords: str, city: str, page: int = 1) -> list:
             text = content[0].get("text", "")
             try:
                 return json.loads(text).get("pois", [])
-            except:
+            except (json.JSONDecodeError, TypeError, AttributeError):
                 return []
     
     return []
@@ -126,7 +126,13 @@ def fetch_brand_stores_in_province(brand: str, province: str) -> list:
             # 过滤：名称必须包含品牌关键词
             name = poi.get("name", "")
             if brand in name or any(b in name for b in ["鸣鸣", "零食很忙", "赵一鸣"]):
-                location = poi.get("location", "0,0").split(",")
+                location_str = poi.get("location", "") or ""
+                location = location_str.split(",") if location_str else []
+                try:
+                    lat = float(location[1]) if len(location) > 1 else 0
+                    lng = float(location[0]) if len(location) > 0 else 0
+                except (ValueError, IndexError):
+                    lat, lng = 0, 0
                 store = {
                     "id": poi.get("id", ""),
                     "name": name,
@@ -134,8 +140,8 @@ def fetch_brand_stores_in_province(brand: str, province: str) -> list:
                     "province": province,
                     "city": poi.get("cityname", ""),
                     "area": poi.get("adname", ""),
-                    "lat": float(location[1]) if len(location) > 1 else 0,
-                    "lng": float(location[0]) if len(location) > 0 else 0,
+                    "lat": lat,
+                    "lng": lng,
                     "tel": poi.get("tel", ""),
                     "brand": brand
                 }

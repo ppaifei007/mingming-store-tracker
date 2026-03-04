@@ -13,6 +13,11 @@ SCRIPTS_DIR = Path(__file__).parent
 def run_script(name: str):
     """运行指定脚本"""
     script_path = SCRIPTS_DIR / name
+    
+    if not script_path.exists():
+        print(f"错误: 脚本不存在 {script_path}")
+        return 1
+    
     print(f"\n{'='*60}")
     print(f"运行: {name}")
     print('='*60)

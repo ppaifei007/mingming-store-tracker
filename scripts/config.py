@@ -82,21 +82,26 @@ PROVINCE_SHORT_NAMES = {
 }
 
 # API配置（从环境变量读取，支持GitHub Actions）
-BAIDU_MAP_API_KEY = os.environ.get("BAIDU_MAP_API_KEY", "uxkjfRCGhKgbvuUrVZRdtNhGea0n2o6J")
+# 注意：API密钥应通过环境变量或GitHub Secrets配置，不要硬编码
+BAIDU_MAP_API_KEY = os.environ.get("BAIDU_MAP_API_KEY", "")
 
 GAODE_MAP_URL = os.environ.get(
     "GAODE_MAP_URL", 
-    "https://instance-d3476d81547545fdabe2a1e7425bc4b2.agentfusion.cn-beijing.volcmcp.com/mcp/amap"
+    "https://restapi.amap.com/v3/place/text"  # 高德地图POI搜索API默认URL
 )
-GAODE_MAP_API_KEY = os.environ.get(
-    "GAODE_MAP_API_KEY",
-    "MjY0YWU3MTk3MTcxNDZlZGE2YzhkMWM2MGM1MjIyMmQ"
-)
+GAODE_MAP_API_KEY = os.environ.get("GAODE_MAP_API_KEY", "")
 
 SINA_FINANCE_URL = os.environ.get(
     "SINA_FINANCE_URL",
     "https://mcp.finance.sina.com.cn/mcp-http"
 )
+
+# MCP配置（用于通过MCP协议调用地图服务）
+GAODE_MCP_URL = os.environ.get(
+    "GAODE_MCP_URL",
+    ""  # 高德地图MCP服务URL，需要配置
+)
+GAODE_MCP_API_KEY = os.environ.get("GAODE_MCP_API_KEY", "")
 
 # 去重配置
 DEDUP_DISTANCE_THRESHOLD = 50  # 50米内视为同一门店

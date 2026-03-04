@@ -85,7 +85,7 @@ def search_stock(keyword: str) -> list:
             text = content[0].get("text", "")
             try:
                 return json.loads(text)
-            except:
+            except (json.JSONDecodeError, TypeError):
                 return []
     
     return []
@@ -114,7 +114,7 @@ def get_financial_report(stock_code: str, year: int) -> dict:
             text = content[0].get("text", "")
             try:
                 return json.loads(text)
-            except:
+            except (json.JSONDecodeError, TypeError):
                 return {}
     
     return {}
