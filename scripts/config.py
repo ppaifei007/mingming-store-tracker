@@ -104,7 +104,7 @@ GAODE_MCP_URL = os.environ.get(
 GAODE_MCP_API_KEY = os.environ.get("GAODE_MCP_API_KEY", "")
 
 # 去重配置
-DEDUP_DISTANCE_THRESHOLD = 50  # 50米内视为同一门店
+DEDUP_DISTANCE_THRESHOLD = 10  # 10米内视为同一门店（从50米调整为10米）
 DEDUP_TEXT_SIMILARITY_THRESHOLD = 0.85  # 地址文本相似度阈值
 
 # API请求配置
