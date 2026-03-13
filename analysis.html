@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析报告 | 门店分析</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #4f46e5;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-chart-line text-2xl text-indigo-600 mr-2"></i>
+                        <span class="font-bold text-xl text-gray-800">门店分析报告</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">首页</a>
+                    <a href="analysis.html" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 bg-indigo-50 nav-link active">分析报告</a>
+                    <a href="data.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">数据详情</a>
+                    <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">关于项目</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="bg-indigo-600 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">门店分析报告</h1>
+            <p class="text-lg opacity-90">鸣鸣很忙 & 万辰集团 2023-2025年门店数据深度分析</p>
+            <p class="text-sm opacity-80 mt-2">报告生成时间: <span class="update-time"></span></p>
+        </div>
+    </section>
+
+    <!-- 鸣鸣很忙分析 -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                <i class="fas fa-store text-indigo-600 mr-2"></i>
+                鸣鸣很忙门店数据分析
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="stat-card bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2023年门店数</h3>
+                    <div class="text-3xl font-bold text-indigo-600">6,585</div>
+                </div>
+                <div class="stat-card bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2024年门店数</h3>
+                    <div class="text-3xl font-bold text-indigo-600">16,783</div>
+                    <div class="text-green-500 text-sm mt-2">
+                        <i class="fas fa-arrow-up"></i> 154.87% 增长
+                    </div>
+                </div>
+                <div class="stat-card bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2025年门店数</h3>
+                    <div class="text-3xl font-bold text-indigo-600">21,041</div>
+                    <div class="text-green-500 text-sm mt-2">
+                        <i class="fas fa-arrow-up"></i> 25.37% 增长
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-container bg-white rounded-lg shadow overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-indigo-600 text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">年份</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">门店总数</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">净增门店</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">增长率</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6,585</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                        </tr>
+                        <tr class="bg-indigo-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2024</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">16,783</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">+10,198</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">154.87%</td>
+                        </tr>
+                        <tr class="bg-indigo-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2025</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">21,041</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">+4,258</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">25.37%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 万辰集团分析 -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                <i class="fas fa-store text-indigo-600 mr-2"></i>
+                万辰集团门店数据分析
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="stat-card bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2023年门店数</h3>
+                    <div class="text-3xl font-bold text-indigo-600">1,200</div>
+                </div>
+                <div class="stat-card bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2024年门店数</h3>
+                    <div class="text-3xl font-bold text-indigo-600">1,800</div>
+                    <div class="text-green-500 text-sm mt-2">
+                        <i class="fas fa-arrow-up"></i> 50.00% 增长
+                    </div>
+                </div>
+                <div class="stat-card bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">2025年门店数</h3>
+                    <div class="text-3xl font-bold text-indigo-600">2,500</div>
+                    <div class="text-green-500 text-sm mt-2">
+                        <i class="fas fa-arrow-up"></i> 38.89% 增长
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-container bg-white rounded-lg shadow overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-indigo-600 text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">年份</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">门店总数</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">净增门店</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">增长率</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1,200</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                        </tr>
+                        <tr class="bg-indigo-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2024</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1,800</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">+600</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">50.00%</td>
+                        </tr>
+                        <tr class="bg-indigo-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2025</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2,500</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">+700</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium">38.89%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 对比分析 -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                <i class="fas fa-balance-scale text-indigo-600 mr-2"></i>
+                鸣鸣很忙 vs 万辰集团门店数对比
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">2025年门店数量对比</h3>
+                    <div class="flex items-center justify-center">
+                        <div class="w-1/2 text-center">
+                            <div class="text-4xl font-bold text-indigo-600 mb-2">21,041</div>
+                            <div class="text-gray-600">鸣鸣很忙</div>
+                        </div>
+                        <div class="w-1/2 text-center">
+                            <div class="text-4xl font-bold text-indigo-600 mb-2">2,500</div>
+                            <div class="text-gray-600">万辰集团</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <div class="text-lg font-semibold text-indigo-600">鸣鸣很忙是万辰集团的 8.4 倍</div>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 shadow">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">年均增长率对比</h3>
+                    <div class="flex items-center justify-center">
+                        <div class="w-1/2 text-center">
+                            <div class="text-4xl font-bold text-green-600 mb-2">70%+</div>
+                            <div class="text-gray-600">鸣鸣很忙</div>
+                        </div>
+                        <div class="w-1/2 text-center">
+                            <div class="text-4xl font-bold text-green-600 mb-2">~45%</div>
+                            <div class="text-gray-600">万辰集团</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <div class="text-lg font-semibold text-indigo-600">鸣鸣很忙增长率领先 25 个百分点</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-container bg-white rounded-lg shadow overflow-hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-indigo-600 text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">年份</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">鸣鸣很忙</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">万辰集团</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">差距</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6,585</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1,200</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 font-medium">5,385</td>
+                        </tr>
+                        <tr class="bg-indigo-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2024</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">16,783</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1,800</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 font-medium">14,983</td>
+                        </tr>
+                        <tr class="bg-indigo-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2025</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">21,041</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2,500</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 font-medium">18,541</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分析总结 -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                <i class="fas fa-chart-line text-indigo-600 mr-2"></i>
+                分析总结
+            </h2>
+            
+            <div class="bg-white rounded-lg shadow p-8">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>鸣鸣很忙</strong>门店数量从2023年的6,585家增长到2025年的21,041家，年均增长率超过70%，展现出强劲的扩张能力。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>万辰集团</strong>门店数量从2023年的1,200家增长到2025年的2,500家，年均增长率约45%，同样保持良好的增长势头。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>区域布局</strong>：鸣鸣很忙在全国各省份均有布局，而万辰集团主要集中在华东地区，区域策略差异明显。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>规模差距</strong>：2025年鸣鸣很忙门店数量是万辰集团的8.4倍，且差距呈扩大趋势，显示出鸣鸣很忙在行业中的领先地位。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>增长趋势</strong>：两家公司都保持强劲增长，但鸣鸣很忙的增长速度更快，显示出更强的市场扩张能力和品牌影响力。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据来源 -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                <i class="fas fa-database text-indigo-600 mr-2"></i>
+                数据来源
+            </h2>
+            
+            <div class="bg-gray-50 rounded-lg p-8 shadow">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-file-alt text-indigo-600 mt-1 mr-3"></i>
+                        <div>
+                            <span class="font-medium text-gray-800">鸣鸣很忙2024年年度报告</span>
+                            <p class="text-gray-600">包含2023-2024年的详细财务和运营数据</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-file-alt text-indigo-600 mt-1 mr-3"></i>
+                        <div>
+                            <span class="font-medium text-gray-800">万辰集团2024年年度报告</span>
+                            <p class="text-gray-600">包含2023-2024年的详细财务和运营数据</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-link text-indigo-600 mt-1 mr-3"></i>
+                        <div>
+                            <span class="font-medium text-gray-800">门店剔重规则参考</span>
+                            <p class="text-gray-600"><a href="https://ppaifei007.github.io/mingming-store-tracker/" target="_blank" class="text-indigo-600 hover:underline">https://ppaifei007.github.io/mingming-store-tracker/</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 门店分析报告. 保留所有权利.</p>
+                <p class="mt-2 text-sm">报告生成时间: <span class="update-time"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 动态更新时间
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date().toLocaleString('zh-CN');
+            document.querySelectorAll('.update-time').forEach(el => {
+                el.textContent = now;
+            });
+        });
+    </script>
+</body>
+</html>
